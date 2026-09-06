@@ -18,6 +18,8 @@ A SaaS platform that brings EV charging networks, reservations, provider operati
 
 **EMPlug** is a multi-provider EV charging aggregation platform offered as Software as a Service. It gives electric vehicle drivers one place to discover, compare, and reserve charging points from different provider networks, removing the need to use a separate application for each operator.
 
+EMPlug extends the ideas and user experience introduced in [**EMPower**](https://github.com/Argyexar/empower-showcase), evolving its single-provider charging application into a multi-provider SaaS ecosystem. It preserves the familiar map-based discovery and reservation flow while adding provider interoperability, centralized administration, analytics, billing, and event-driven services.
+
 For charging providers, EMPlug supplies the customer-facing experience together with provider management, usage analytics, CSV exports, and billing tools. Platform operators receive a global view of providers, infrastructure health, synchronization activity, and usage across the ecosystem.
 
 Developed for the **Software-as-a-Service Technologies course at the National Technical University of Athens (NTUA), 2025–2026**, EMPlug focuses on service boundaries, provider interoperability, asynchronous communication, isolated persistence, role-aware interfaces, and containerized deployment.
