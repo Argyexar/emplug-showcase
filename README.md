@@ -45,6 +45,8 @@ Developed for the **Software-as-a-Service Technologies course at the National Te
 - Inspect individual connectors with provider, status, maximum charging power, and price per kWh.
 - Select a specific provider connector before creating a reservation.
 
+![EMPlug multi-provider charging map with clustered stations](<assets/home page.jpeg>)
+
 ### Sign in and reserve
 
 EMPlug uses Google OAuth for user authentication. A reservation follows a short, guided flow:
@@ -62,6 +64,8 @@ The reservation service verifies the authenticated user, checks for an existing 
 
 The account page brings together the signed-in user's profile, provider memberships, access level, and active reservation. Authentication state is shared across the customer and administration areas, with explicit handling for logout, expired sessions, and invalid tokens.
 
+![EMPlug account page with platform role and provider access](assets/account.jpeg)
+
 ### Work across desktop and mobile
 
 The driver interface adapts between a combined map-and-sidebar layout on desktop and switchable map/list views on smaller screens. Light, dark, and system themes apply consistently across the application and map.
@@ -69,6 +73,8 @@ The driver interface adapts between a combined map-and-sidebar layout on desktop
 ## User roles
 
 EMPlug provides role-aware experiences for three groups.
+
+> **Demo account:** The screenshots use an account with both Platform Operator and Provider Admin access so that both administrative experiences can be presented. The interface is role-aware: users without operator privileges do not see operator sections, while provider users only see the providers and actions allowed by their assigned membership role.
 
 ### EV user
 
@@ -84,10 +90,18 @@ EMPlug provides role-aware experiences for three groups.
 - View provider profile, operational status, API configuration, and team membership.
 - Give provider users **admin** or **viewer** access.
 - Restrict management actions such as editing provider information, configuring an API, and managing users to provider administrators.
+
+![Provider administration dashboard with configuration and management actions](assets/pr_admin.jpeg)
+
 - Explore provider-specific searches, station views, reservations, unique users, reservation outcomes, and derived conversion metrics.
 - Select date ranges and hourly, daily, weekly, or monthly analytics buckets.
 - Export analytics time-series data as CSV.
+
+![Provider analytics dashboard with activity and reservation metrics](assets/pr_analytics.jpeg)
+
 - Review invoice totals, pending balances, paid invoices, billing periods, and detailed line items.
+
+![Provider billing dashboard with balances and invoice history](assets/pr_billing.jpeg)
 
 ### Platform operator
 
@@ -97,8 +111,18 @@ EMPlug provides role-aware experiences for three groups.
 - Browse, filter, add, activate, deactivate, and edit charging providers.
 - Configure each provider's integration type, base URL, API key, and activation state.
 - Assign and update provider administrators and viewers.
+
+![Platform operator provider directory](assets/op_providers.jpeg)
+
+![Platform operator provider details and management actions](assets/op_prov_details.jpeg)
+
 - View platform-wide usage totals, conversion metrics, provider rankings, and per-provider breakdowns.
+
+![Platform-wide analytics with provider rankings and performance metrics](assets/op_analytics.jpeg)
+
 - Control synchronization settings such as scheduler status, refresh interval, and idle timeout.
+
+![Provider synchronization settings](assets/op_settings.jpeg)
 
 ## Provider aggregation
 
@@ -185,6 +209,10 @@ The points service receives read-only access to catalog data, while the synchron
 ### Operational visibility
 
 The operator dashboard aggregates health checks from the platform services and their databases. It presents the deployment as both an interactive graph and a list, summarizes overall status, and combines this information with provider synchronization history. This makes the system's runtime architecture visible from within the product instead of limiting observability to container logs.
+
+![Healthy EMPlug services and databases in the operator dashboard](assets/success.jpeg)
+
+![Degraded EMPlug platform showing a failed service and synchronization errors](<assets/failed service.jpeg>)
 
 ## Engineering details
 
